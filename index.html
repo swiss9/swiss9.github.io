@@ -11,6 +11,7 @@
 <style>
 :root{
   --bg:#060606; --ink:#f2efe6; --mut:#8f8f88; --line:rgba(242,239,230,.14);
+  --crimson:#dc143c;
   --serif:"Fraunces",Georgia,serif; --sans:"Space Grotesk",system-ui,sans-serif; --mono:"Space Mono",monospace;
   --pad:clamp(1.25rem,4vw,4rem);
 }
@@ -55,13 +56,16 @@ a:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
   letter-spacing:.14em;text-transform:uppercase}
 
 /* work */
-#work{padding-bottom:clamp(4rem,8vw,7rem)}
+#work{padding-bottom:0}
 .shead{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:1.3rem;margin-bottom:.4rem}
 .shead .mono{color:var(--mut);text-transform:none;font-size:.75rem}
 .wrow{display:grid;grid-template-columns:3rem minmax(0,1fr);grid-template-areas:"i main" "i thumb" "i links";gap:0 1.6rem;padding:1.9rem .9rem;border-bottom:1px solid var(--line);position:relative;transition:background .35s}
 .wrow:first-of-type{border-top:1px solid transparent}
 .wrow:hover{background:rgba(242,239,230,.045)}
-.wi{grid-area:i;color:var(--mut);padding-top:.4rem}
+.wi{grid-area:i;align-self:start;margin-top:.3rem;width:2.3rem;height:2.3rem;
+  border:1.5px solid var(--crimson);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--mut);letter-spacing:.08em;font-size:.62rem}
 .wmain{grid-area:main}
 .wname{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.3rem);font-weight:460;line-height:1.05}
 .wdesc{display:block;font-size:.9rem;color:var(--mut);margin-top:.35rem;max-width:42em}
@@ -78,12 +82,13 @@ a:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
 .wthumb{grid-area:thumb;display:block;margin-top:1.1rem}
 .wthumb img{max-width:100%;height:auto;border:1px solid var(--line)}
 @media(max-width:900px){
-  .wrow{grid-template-columns:2.2rem 1fr;grid-template-areas:"i main" "thumb thumb" "links links";gap:.6rem 1rem;padding:1.6rem .2rem}
+  .wrow{grid-template-columns:2.8rem 1fr;grid-template-areas:"i main" "thumb thumb" "links links";gap:.6rem 1rem;padding:1.6rem .2rem}
+  .wi{width:2rem;height:2rem;margin-top:.2rem;font-size:.58rem}
   .wthumb{margin-top:.9rem}
 }
 
 /* footer */
-footer{border-top:1px solid var(--line);padding:clamp(3rem,6vw,5rem) 0 2rem}
+footer{padding:clamp(2.5rem,5vw,3.5rem) 0 2rem}
 .fbar{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;justify-content:space-between;padding-top:1.3rem;color:var(--mut)}
 
 @media (prefers-reduced-motion:reduce){
@@ -152,35 +157,20 @@ footer{border-top:1px solid var(--line);padding:clamp(3rem,6vw,5rem) 0 2rem}
     <div class="wrow rv">
       <span class="wi mono">01</span>
       <div class="wmain">
-        <span class="wname">Kito</span>
-        <span class="wdesc">Anime and tokusatsu search, release ranking, and recommendations.</span>
+        <span class="wname">Gatekeep Shop</span>
+        <span class="wdesc">Telegram Mini App storefront. Six payment methods, instant digital delivery, team roles, regional storage proxy.</span>
       </div>
-      <span class="wthumb"><img src="https://i.ibb.co/NdJw28WS/kito-2.jpg" alt="Kito screenshot" loading="lazy"></span>
+      <span class="wthumb"><img src="https://i.imgur.com/p1kwDbD.jpeg" alt="Gatekeep Shop screenshot" loading="lazy"></span>
       <div class="wlinks">
-        <a href="https://github.com/swiss9/kito-backend" target="_blank" rel="noopener" aria-label="Kito on GitHub" title="GitHub">
+        <a href="https://github.com/swiss9/gatekeep-shop" target="_blank" rel="noopener" aria-label="Gatekeep Shop on GitHub" title="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-gh"/></svg><span>GitHub ↗</span></a>
-        <a href="https://kito-search.vercel.app/" target="_blank" rel="noopener" aria-label="Kito live site" title="Live">
-          <svg viewBox="0 0 24 24"><use href="#i-globe"/></svg><span>Live ↗</span></a>
+        <a href="https://t.me/gatekeep_shop_bot" target="_blank" rel="noopener" aria-label="Gatekeep Shop live on Telegram" title="Live">
+          <svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-tg"/></svg><span>Live ↗</span></a>
       </div>
     </div>
 
     <div class="wrow rv" style="--d:.06s">
       <span class="wi mono">02</span>
-      <div class="wmain">
-        <span class="wname">OFAC Sanctions API</span>
-        <span class="wdesc">OFAC sanctions screening API. Pay-per-call in USDC. Returns a signed proof-of-execution receipt.</span>
-      </div>
-      <span class="wthumb"><img src="https://i.ibb.co/ks1GLnX0/x402.jpg" alt="OFAC Sanctions API screenshot" loading="lazy"></span>
-      <div class="wlinks">
-        <a href="https://github.com/swiss9/x402-sanctions-api" target="_blank" rel="noopener" aria-label="OFAC Sanctions API on GitHub" title="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-gh"/></svg><span>GitHub ↗</span></a>
-        <a href="https://x402-sanctions-api.onrender.com/.well-known/x402" target="_blank" rel="noopener" aria-label="OFAC Sanctions API live view" title="Live">
-          <svg viewBox="0 0 24 24"><use href="#i-globe"/></svg><span>Live ↗</span></a>
-      </div>
-    </div>
-
-    <div class="wrow rv" style="--d:.12s">
-      <span class="wi mono">03</span>
       <div class="wmain">
         <span class="wname">Launchbase</span>
         <span class="wdesc">A production-ready Next.js template. Auth, payments, admin panel included.</span>
@@ -194,8 +184,38 @@ footer{border-top:1px solid var(--line);padding:clamp(3rem,6vw,5rem) 0 2rem}
       </div>
     </div>
 
+    <div class="wrow rv" style="--d:.12s">
+      <span class="wi mono">03</span>
+      <div class="wmain">
+        <span class="wname">Kito</span>
+        <span class="wdesc">Anime and tokusatsu search, release ranking, and recommendations.</span>
+      </div>
+      <span class="wthumb"><img src="https://i.ibb.co/NdJw28WS/kito-2.jpg" alt="Kito screenshot" loading="lazy"></span>
+      <div class="wlinks">
+        <a href="https://github.com/swiss9/kito-backend" target="_blank" rel="noopener" aria-label="Kito on GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-gh"/></svg><span>GitHub ↗</span></a>
+        <a href="https://kito-search.vercel.app/" target="_blank" rel="noopener" aria-label="Kito live site" title="Live">
+          <svg viewBox="0 0 24 24"><use href="#i-globe"/></svg><span>Live ↗</span></a>
+      </div>
+    </div>
+
     <div class="wrow rv" style="--d:.18s">
       <span class="wi mono">04</span>
+      <div class="wmain">
+        <span class="wname">OFAC Sanctions API</span>
+        <span class="wdesc">OFAC sanctions screening API. Pay-per-call in USDC. Returns a signed proof-of-execution receipt.</span>
+      </div>
+      <span class="wthumb"><img src="https://i.ibb.co/ks1GLnX0/x402.jpg" alt="OFAC Sanctions API screenshot" loading="lazy"></span>
+      <div class="wlinks">
+        <a href="https://github.com/swiss9/x402-sanctions-api" target="_blank" rel="noopener" aria-label="OFAC Sanctions API on GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-gh"/></svg><span>GitHub ↗</span></a>
+        <a href="https://x402-sanctions-api.onrender.com/.well-known/x402" target="_blank" rel="noopener" aria-label="OFAC Sanctions API live view" title="Live">
+          <svg viewBox="0 0 24 24"><use href="#i-globe"/></svg><span>Live ↗</span></a>
+      </div>
+    </div>
+
+    <div class="wrow rv" style="--d:.24s">
+      <span class="wi mono">05</span>
       <div class="wmain">
         <span class="wname">Lazarus</span>
         <span class="wdesc">Saves every keystroke in any web form. Restores it after crashes or tab closes.</span>
@@ -205,7 +225,7 @@ footer{border-top:1px solid var(--line);padding:clamp(3rem,6vw,5rem) 0 2rem}
         <a href="https://github.com/swiss9/lazarus-revived" target="_blank" rel="noopener" aria-label="Lazarus on GitHub" title="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-gh"/></svg><span>GitHub ↗</span></a>
         <a href="https://addons.mozilla.org/en-US/firefox/addon/lazarus-form-recovery/" target="_blank" rel="noopener" aria-label="Lazarus on Firefox Add-ons" title="Live">
-          <svg viewBox="0 0 24 24"><use href="#i-globe"/></svg><span>Live ↗</span></a>
+          <svg viewBox="0 0 24 24"><use href="#i-ff"/></svg><span>Live ↗</span></a>
       </div>
     </div>
   </section>
